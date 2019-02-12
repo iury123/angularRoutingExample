@@ -17,15 +17,20 @@ export class HeroDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private service: HeroService) { }
+    private service: HeroService,
+  ) { }
 
   ngOnInit() {
-    console.log('dddd')
     this.heroObservable = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.service.getHero(Number(params.get('id'))))  
+        this.service.getHero(Number(params.get('id'))))
     );
-    this.heroObservable.subscribe((hero) => this.hero = hero)
+    this.heroObservable.subscribe((hero) => {
+      this.hero = hero
+      if (!this.hero) {
+        this.router.navigate(['/hero_not_found'])
+      }
+    })
   }
 
 }

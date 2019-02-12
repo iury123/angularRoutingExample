@@ -12,7 +12,7 @@ import { HeroesModule } from './heroes/heroes.module';
   declarations: [
     AppComponent,
     CrisisListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
