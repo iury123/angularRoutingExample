@@ -27,6 +27,28 @@ Run `npm run electron` for running electron container.
   }, ...
 ```
 
+## You must create tsconfig.json in your Electron directory /electron.
+```json
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "baseUrl": "./",
+      "outDir": "./dist",
+      "sourceMap": true,
+      "declaration": false,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "target": "es5",
+      "typeRoots": ["node_modules/@types"],
+      "lib": ["es2018", "dom"]
+    }
+  }
+```
+
+
+
 
 ## Code scaffolding
 
