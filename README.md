@@ -23,7 +23,7 @@ Run `npm run electron` for running electron container.
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "ng build --base-href ./ && tsc --p electron && electron ."
-  }, ...```
+  }```
 
 
 ## Code scaffolding
