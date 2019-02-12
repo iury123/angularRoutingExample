@@ -47,11 +47,14 @@ Run `npm run electron` for running electron container.
   }
 ```
 ## Setup to use TypeScript in mocha tests.
-`npm install --save-dev mocha chai`
-`npm install --save-dev ts-node typescript`
-`npm install --save-dev @types/chai @types/mocha`
-`!!! IMPORTANT: In tsconfig.json in the root of your project, change "module": "es2015" to "module": "commonjs"`
-`To run your tests, npm test`
+```javascript
+    npm install --save-dev mocha chai
+    npm install --save-dev ts-node typescript
+    npm install --save-dev @types/chai @types/mocha
+```
+    !!! IMPORTANT: In tsconfig.json in the root of your project, change "module": "es2015" to "module": "commonjs"
+    To run your tests `npm test`
+
 
 ## Code scaffolding
 
