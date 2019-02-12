@@ -51,11 +51,13 @@ test/root.ts is just an example of this project. Provides the local where the te
 ```
 ## Setup to use TypeScript in mocha tests.
 
+[Link da fonte](https://medium.com/@FizzyInTheHall/run-typescript-mocha-tests-in-visual-studio-code-58e62a173575)
+
  !!! IMPORTANT: In tsconfig.json in the root of your project, change "module": "es2015" to "module": "commonjs".
 
 ```javascript
     npm install --save-dev mocha chai
-    npm install --save-dev ts-node typescript
+    npm install --save-dev ts-node typescript@">=3.1.1 <3.3"
     npm install --save-dev @types/chai @types/mocha
     npm test
 ```
