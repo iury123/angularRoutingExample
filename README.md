@@ -2,9 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
 
-## Development server
+## Development server (Angular)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for running angular container. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Development server (Electron)
+
+Run `npm run electron` for running electron container.
+
+## Your package.json must containg the following snippet in order to use TypeScript in Electron.
+`{
+  "name": "my-app",
+  "version": "0.0.0",
+  "main": "electron/dist/main.js",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "mocha --require ts-node/register test/root.ts",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "electron": "ng build --base-href ./ && tsc --p electron && electron ."
+  }, ...`
+
 
 ## Code scaffolding
 
