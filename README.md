@@ -11,7 +11,7 @@ Run `ng serve` for running angular container. Navigate to `http://localhost:4200
 Run `npm run electron` for running electron container.
 
 ## Your package.json must containg the following snippet in order to use TypeScript in Electron.
-```json
+```javascript
 {
   "name": "my-app",
   "version": "0.0.0",
