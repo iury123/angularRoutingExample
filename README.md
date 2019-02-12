@@ -47,15 +47,15 @@ Run `npm run electron` for running electron container.
   }
 ```
 ## Setup to use TypeScript in mocha tests.
+
+ !!! IMPORTANT: In tsconfig.json in the root of your project, change "module": "es2015" to "module": "commonjs".
+
 ```javascript
     npm install --save-dev mocha chai
     npm install --save-dev ts-node typescript
     npm install --save-dev @types/chai @types/mocha
+    npm test
 ```
-    !!! IMPORTANT: In tsconfig.json in the root of your project, change "module": "es2015" to "module": "commonjs"
-    To run your tests `npm test`
-
-
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
