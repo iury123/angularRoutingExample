@@ -15,7 +15,8 @@ export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
   private heroObservable: Observable<Hero>
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private router: Router,
     private service: HeroService,
   ) { }
@@ -26,7 +27,7 @@ export class HeroDetailComponent implements OnInit {
         this.service.getHero(Number(params.get('id'))))
     );
     this.heroObservable.subscribe((hero) => {
-      this.hero = hero
+      this.hero = hero;
       if (!this.hero) {
         this.router.navigate(['/hero_not_found'])
       }

@@ -19,21 +19,22 @@ export class HeroListComponent implements OnInit {
   subscription: Subscription;
 
 
-  constructor(private heroService: HeroService,
+  constructor(
+    private heroService: HeroService,
     private router: Router,
     private route: ActivatedRoute,
     private http: HttpClient) { }
 
   ngOnInit() {
     this.subscription = this.route.queryParams.subscribe((queryParams: any) => {
-      this.page = queryParams['page'] || 1
+      this.page = queryParams['page'] || 1;
       console.log(queryParams);
       this.getHeroes();
     })
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe()
+    this.subscription.unsubscribe();
   }
 
   onSelect(hero: Hero): void {
@@ -47,7 +48,7 @@ export class HeroListComponent implements OnInit {
   }
 
   nextPage() {
-    this.router.navigate(['/heroes'],{queryParams: {'page': ++this.page}})
+    this.router.navigate(['/heroes'],{queryParams: {'page': ++this.page}});
   }
 
 }
