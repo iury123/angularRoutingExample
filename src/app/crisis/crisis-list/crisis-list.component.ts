@@ -8,11 +8,14 @@ import { CrisisService } from '../crisis.service';
 })
 export class CrisisListComponent implements OnInit {
 
+  private crisis: any[] = [];
+
   constructor(
     private crisisService: CrisisService
   ) { }
 
   ngOnInit() {
+    this.crisis = this.crisisService.getCrisis();
   }
 
 }

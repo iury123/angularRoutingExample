@@ -1,4 +1,6 @@
 import {app, BrowserWindow} from 'electron';
+import * as path from "path";
+import * as url from "url";
 
 const baseUrl = 'http://localhost:4200';
 
@@ -15,9 +17,13 @@ app.on('activate', () => {
 function createWindow() {
     mainWindow = new BrowserWindow({width: 800, height: 600});
     mainWindow.loadURL(baseUrl);
+    // mainWindow.loadURL(url.format({
+    //     pathname: path.join(__dirname, '../../dist/my-app/index.html'),
+    //     protocol: 'file',
+    //     slashes: true
+    // }));
 
     mainWindow.webContents.openDevTools();
-
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
