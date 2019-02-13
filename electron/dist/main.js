@@ -10,7 +10,7 @@ electron_1.app.on('activate', function () {
     }
 });
 function createWindow() {
-    mainWindow = new electron_1.BrowserWindow({ width: 800, height: 600 });
+    mainWindow = new electron_1.BrowserWindow({ width: 1200, height: 900 });
     mainWindow.loadURL(baseUrl);
     // mainWindow.loadURL(url.format({
     //     pathname: path.join(__dirname, '../../dist/my-app/index.html'),

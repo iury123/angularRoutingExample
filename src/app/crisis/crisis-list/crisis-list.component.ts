@@ -17,5 +17,4 @@ export class CrisisListComponent implements OnInit {
   ngOnInit() {
     this.crisis = this.crisisService.getCrisis();
   }
-
 }

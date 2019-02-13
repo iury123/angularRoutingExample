@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './hero-list.component.html',
   styleUrls: ['./hero-list.component.scss']
 })
-export class HeroListComponent implements OnInit {
+export class HeroListComponent implements OnInit, OnDestroy {
 
   selectedHero: Hero;
   page: number

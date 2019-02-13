@@ -18,4 +18,8 @@ export class CrisisService {
     return this.crisis;
   }
 
+  getCrise(id: number) {
+    return this.crisis.find((crise) => crise.id === id);
+  }
+
 }

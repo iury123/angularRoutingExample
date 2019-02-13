@@ -1,7 +1,7 @@
 <h2>CRISIS CENTER</h2>
 <p>Crisis List</p>
 <ul class="crisis">
-    <li *ngFor="let crise of crisis">
+    <li *ngFor="let crise of crisis" [routerLink]="[crise.id]" routerLinkActive="active" >
       <span class="badge">{{ crise.id }}</span> {{crise.name}}
     </li>
   </ul> 
