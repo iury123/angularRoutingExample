@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
 export class HeroListComponent implements OnInit, OnDestroy {
 
   selectedHero: Hero;
-  page: number
+  page: number;
   heroes: Hero[];
   subscription: Subscription;
 
@@ -39,7 +39,8 @@ export class HeroListComponent implements OnInit, OnDestroy {
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
-    this.router.navigate([`/hero`, this.selectedHero.id])
+    this.router.navigate(['/heroes', this.selectedHero.id]);
+    // ou no HTML [routerLink]="['/heroes', hero.id]"
   }
 
   getHeroes(): void {

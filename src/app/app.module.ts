@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HeroesModule } from './heroes/heroes.module';
-import { CrisisModule } from './crisis/crisis.module';
+// import { HeroesModule } from './heroes/heroes.module';
+// import { CrisisModule } from './crisis/crisis.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +17,8 @@ import { CrisisModule } from './crisis/crisis.module';
     BrowserModule,
     FormsModule,
     // os módulos especificos vem primeiro.
-    CrisisModule,
-    HeroesModule,
+    // CrisisModule,
+    // HeroesModule, in order to lazy module.
     AppRoutingModule,
   ],
   providers: [],

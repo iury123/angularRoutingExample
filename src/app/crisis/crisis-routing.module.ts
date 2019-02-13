@@ -6,7 +6,8 @@ import { CrisisDetailsComponent } from './crisis-details/crisis-details.componen
 
 const routes: Routes = [
   {
-    path: 'crisis', component: CrisisListComponent, children: [
+    // lazy loading.
+    path: '', component: CrisisListComponent, children: [
       { path: 'new', component: CrisisFormComponent },
       // rotas com parametros dinamicos devem vir por ultimo
       // para evitar colisões.

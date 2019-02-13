@@ -5,9 +5,16 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroNotFoundComponent } from './hero-not-found/hero-not-found.component';
 
 const routes: Routes = [
-  { path: 'heroes',  component: HeroListComponent },
-  { path: 'hero/:id', component: HeroDetailComponent },
-  { path: 'hero_not_found', component: HeroNotFoundComponent}
+  // blank because it is lazy loading.
+  { path: '',  component: HeroListComponent },
+
+  { path: 'hero_not_found', component: HeroNotFoundComponent},
+  // rotas com parametros dinamicos devem vir por ultimo
+  // para evitar colisões.
+
+  // { path: 'hero/:id', component: HeroDetailComponent }, No lazy loading, URL nâo pode ter nomes diferentes. hero/ não pode.
+  { path: ':id', component: HeroDetailComponent }
+
 ];
 
 @NgModule({
