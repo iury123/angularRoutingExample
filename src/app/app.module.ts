@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
+import { LoginModule } from './login/login.module';
+import { AuthService } from './login/auth.service';
 // import { HeroesModule } from './heroes/heroes.module';
 // import { CrisisModule } from './crisis/crisis.module';
 
@@ -21,7 +24,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     // HeroesModule, in order to lazy module.
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    AuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
