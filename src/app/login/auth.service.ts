@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { User } from './user';
 import { Router } from '@angular/router';
 
@@ -8,18 +8,24 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   private authenticatedUser = false;
+  public showMenuEmitter = new EventEmitter<boolean>();
 
   constructor(
-    private router: Router,
   ) { }
 
-  public doLogin(user: User) {
-    if (user.name === 'iury' && user.password === 'aaa111') {
-      this.authenticatedUser = true;
-      this.router.navigate(['/']);
-    } else {
-      this.authenticatedUser = false;
-    }
+  public doLogin(user: User): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      if (user.name === 'iury' && user.password === 'aaa111') {
+        this.authenticatedUser = true;
+        this.showMenuEmitter.emit(true);
+        resolve();
+      } else {
+        this.authenticatedUser = false;
+        this.showMenuEmitter.emit(false);
+        reject();
+      }
+    });
+
   }
 
   public isUserAuthenticated() {

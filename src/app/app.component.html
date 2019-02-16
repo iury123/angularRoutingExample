@@ -1,7 +1,7 @@
 <h1>Angular Router</h1>
 <nav>
-  <a routerLink="/login" routerLinkActive="active">Login</a> 
-  <a routerLink="/crisis" routerLinkActive="active" >Crisis Center</a>
-  <a routerLink="/heroes" routerLinkActive="active" [queryParams]="{page:1}">Heroes</a>
+  <a routerLink="/login"  routerLinkActive="active">Login</a> 
+  <a routerLink="/crisis" *ngIf="showMenu" routerLinkActive="active" >Crisis Center</a>
+  <a routerLink="/heroes" *ngIf="showMenu" routerLinkActive="active" [queryParams]="{page:1}">Heroes</a>
 </nav>
 <router-outlet></router-outlet>
