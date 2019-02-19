@@ -13,7 +13,6 @@ const routes: Routes = [
   {
     path: 'crisis', loadChildren: './crisis/crisis.module#CrisisModule',
     canActivate: [AuthGuard],
-    canActivateChild: [CrisisGuard]
   }, // lazy loading.
   { path: '', redirectTo: '/heroes', canActivate: [AuthGuard], pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

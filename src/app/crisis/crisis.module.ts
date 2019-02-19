@@ -6,6 +6,7 @@ import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { CrisisFormComponent } from './crisis-form/crisis-form.component';
 import { CrisisDetailsComponent } from './crisis-details/crisis-details.component';
 import { CrisisService } from './crisis.service';
+import { CrisisDeactivateGuard } from '../guards/crisis-deactivate.guard';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CrisisService } from './crisis.service';
     CrisisRoutingModule
   ],
   providers: [
-    CrisisService
+    CrisisService,
+    CrisisDeactivateGuard
   ]
 })
 export class CrisisModule { }
