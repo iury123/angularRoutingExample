@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroNotFoundComponent } from './hero-not-found/hero-not-found.component';
+import { HeroDetailResolveGuard } from '../guards/hero-detail.resolver';
 
 const routes: Routes = [
   // blank because it is lazy loading.
@@ -13,7 +14,7 @@ const routes: Routes = [
   // para evitar colisões.
 
   // { path: 'hero/:id', component: HeroDetailComponent }, No lazy loading, URL nâo pode ter nomes diferentes. hero/ não pode.
-  { path: ':id', component: HeroDetailComponent }
+  { path: ':id', component: HeroDetailComponent, resolve: { hero: HeroDetailResolveGuard} }
 
 ];
 

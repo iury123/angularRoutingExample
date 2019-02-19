@@ -8,6 +8,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { FormsModule } from '@angular/forms';
 import { HeroNotFoundComponent } from './hero-not-found/hero-not-found.component';
 import { HeroService } from './hero.service';
+import { HeroDetailResolveGuard } from '../guards/hero-detail.resolver';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HeroService } from './hero.service';
     FormsModule,
     HeroesRoutingModule,
   ],
-  providers: [HeroService]
+  providers: [HeroService,
+    HeroDetailResolveGuard]
 })
 export class HeroesModule { }
